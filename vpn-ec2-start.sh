@@ -7,7 +7,7 @@
 #AMI_DESCRIPTION="amazon/amzn-ami-pv-2012.09.0.x86_64-ebs"
 AMI_ID=ami-c37474b7
 KEY_ID=sst-ec2
-SEC_ID=OpenVPN
+SEC_ID=VPN
 BOOTSTRAP_SCRIPT=vpn-ec2-install.sh 
 
 echo "Starting Instance..."
