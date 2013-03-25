@@ -30,9 +30,9 @@ You also need to have
 - an account on AWS EC2 :-)
 - to define a ssh key pair in AWS console (or through the command line)
 - to define an AWS Security Group with the following rules :
--- TCP 500 0.0.0.0/0
--- UDP 500 0.0.0.0/0
--- UDP 4500 0.0.0.0/0
+  - TCP 500 0.0.0.0/0
+  - UDP 500 0.0.0.0/0
+  - UDP 4500 0.0.0.0/0
 
 vpn-ec2-start.sh must be modified 
 
