@@ -10,9 +10,9 @@ Start a private VPN server in the cloud.
 THESE SCRIPTS MUST BE MODIFIED TO RUN IN YOUR ENVIRONMENT - PLEASE READ BELOW
 
 These local scripts have the following preriquisites
-- AWS EC2 Command Line API is installed 
+- AWS EC2 Command Line API is installed (http://aws.amazon.com/developertools/351)
 - EC2_HOME environment variable points to command line tools
-- EC2_URL environment variables contains AWS endpoint (Europe, US etc ..)
+- EC2_URL environment variables contains AWS endpoint (http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region)
 - AWS_ACCESS_KEY environment variable contains your AWS access key
 - AWS_SECRET_KEY environment variable contains your AWS secret key
 
