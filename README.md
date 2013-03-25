@@ -1,12 +1,16 @@
 AWSVPN
 ======
 
+License
+-------
+
   Licensed under the BSD 3 Clauses License
   http://opensource.org/licenses/BSD-3-Clause
-
   Distributed on an "AS IS" basis without warranties
   or conditions of any kind, either express or implied.
-  
+
+How To ?
+--------
   
 Start a private VPN server in the cloud. 
 
