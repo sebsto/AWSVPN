@@ -1,11 +1,10 @@
-
 #to be run on my laptop
 
 
 # create and start an instance
 #AMI = AMZN Linux 64 Bits
-#AMI_DESCRIPTION="amazon/amzn-ami-pv-2012.09.0.x86_64-ebs"
-AMI_ID=ami-c37474b7
+#AMI_DESCRIPTION="amazon/amzn-ami-pv-2013.03.0.x86_64-ebs"
+AMI_ID=ami-44939930
 KEY_ID=sst-ec2
 SEC_ID=VPN
 BOOTSTRAP_SCRIPT=vpn-ec2-install.sh 
