@@ -11,8 +11,8 @@ Distributed on an "AS IS" basis without warranties or conditions of any kind, ei
 Known Issue
 -----------
 
-If you are starting an EC2 instance yourself, instead of using the provided vpn-ec2-start script provided,
-you will start a newer version of the Amazon Linux image which contains some incompatible changes in directory layout
+If you are starting an EC2 instance yourself, instead of using the provided vpn-ec2-start script,
+you will start a newer version of the Amazon Linux image which contains some incompatible changes in directory layout.
 
 This will cause the vpn-ec2-install script to fail at line 100.
 
