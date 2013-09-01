@@ -3,8 +3,20 @@
 
 # create and start an instance
 #AMI = AMZN Linux 64 Bits
-#AMI_DESCRIPTION="amazon/amzn-ami-pv-2013.03.0.x86_64-ebs"
-AMI_ID=ami-44939930
+#As of 1 sept 2013, the 64 Bits AMZN Linux AMI are
+#"Mappings": {
+#       "AWSRegionToAMI": {
+#           "us-east-1": { "AMI": "ami-05355a6c" },
+#           "us-west-2": { "AMI": "ami-0358ce33" },
+#           "us-west-1": { "AMI": "ami-3ffed17a" },
+#           "eu-west-1": { "AMI": "ami-c7c0d6b3" },
+#           "ap-southeast-1": { "AMI": "ami-fade91a8" },
+#           "ap-northeast-1": { "AMI": "ami-39b23d38" },
+#           "ap-southeast-2": { "AMI": "ami-d16bfbeb" },
+#           "sa-east-1": { "AMI": "ami-5253894f" }
+#       }
+
+AMI_ID=ami-c7c0d6b3 #must be adapted to your region
 KEY_ID=sst-ec2
 SEC_ID=VPN
 BOOTSTRAP_SCRIPT=vpn-ec2-install.sh 
