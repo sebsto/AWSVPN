@@ -33,7 +33,8 @@ Here is an example of my $HOME/.aws/config
 [default]
 aws_access_key_id = AK..OQ
 aws_secret_access_key = gj...T8
-region = eu-west-1```
+region = eu-west-1
+```
 
 You also need the following 
 
