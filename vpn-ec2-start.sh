@@ -1,3 +1,4 @@
+#!/bin/bash -x
 #to be run on my laptop
 
 
@@ -16,32 +17,32 @@
 #           "sa-east-1": { "AMI": "ami-5253894f" }
 #       }
 
-AMI_ID=ami-c7c0d6b3 #must be adapted to your region
-KEY_ID=sst-ec2
+AMI_ID=ami-5256b825 #must be adapted to your region (Amazon Linux, PV, 64 Bits, 2013.09.02, eu-west)
+KEY_ID=sst-aws
 SEC_ID=VPN
 BOOTSTRAP_SCRIPT=vpn-ec2-install.sh 
 
 echo "Starting Instance..."
-INSTANCE_DETAILS=`$EC2_HOME/bin/ec2-run-instances $AMI_ID -k $KEY_ID -t t1.micro -g $SEC_ID -f $BOOTSTRAP_SCRIPT | grep INSTANCE`
-echo $INSTANCE_DETAILS
+INSTANCE_DETAILS=`aws ec2 run-instances --image-id $AMI_ID --key-name $KEY_ID --security-groups $SEC_ID --instance-type t1.micro --user-data file://./$BOOTSTRAP_SCRIPT --output text | grep INSTANCES`
 
-AVAILABILITY_ZONE=`echo $INSTANCE_DETAILS | awk '{print $9}'`
-INSTANCE_ID=`echo $INSTANCE_DETAILS | awk '{print $2}'`
+INSTANCE_ID=`echo $INSTANCE_DETAILS | awk '{print $8}'`
 echo $INSTANCE_ID > $HOME/vpn-ec2.id 
 
 # wait for instance to be started
-DNS_NAME=`$EC2_HOME/bin/ec2-describe-instances --filter "image-id=$AMI_ID" --filter "instance-state-name=running" | grep INSTANCE | awk '{print $4}'`
+STATUS=`aws ec2 describe-instance-status --instance-ids $INSTANCE_ID --output text | grep INSTANCESTATUS | grep -v INSTANCESTATUSES | awk '{print $2}'`
 
-while [ -z "$DNS_NAME" ]
+while [ "$STATUS" != "ok" ]
 do
     echo "Waiting for instance to start...."
     sleep 5
-    DNS_NAME=`$EC2_HOME/bin/ec2-describe-instances --filter "image-id=$AMI_ID" --filter "instance-state-name=running" | grep INSTANCE | awk '{print $4}'`
+    STATUS=`aws ec2 describe-instance-status --instance-ids $INSTANCE_ID --output text | grep INSTANCESTATUS | grep -v INSTANCESTATUSES | awk '{print $2}'`
 done
 
 echo "Instance started"
 
 echo "Instance ID = " $INSTANCE_ID
+DNS_NAME=`aws ec2 describe-instances --instance-ids $INSTANCE_ID --output text | grep INSTANCES | awk '{print $15}'`
+AVAILABILITY_ZONE=`aws ec2 describe-instances --instance-ids $INSTANCE_ID --output text | grep PLACEMENT | awk '{print $2}'`
 echo "DNS = " $DNS_NAME " in availability zone " $AVAILABILITY_ZONE
 
 
