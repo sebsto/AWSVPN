@@ -1,4 +1,4 @@
-
+#!/bin/bash
 #to be run on my laptop
 
 
@@ -22,6 +22,6 @@ then
     exit -1
 fi
 
-$EC2_HOME/bin/ec2-terminate-instances $INSTANCE_ID
+aws ec2 terminate-instances --instance-ids $INSTANCE_ID
 rm $INSTANCE_FILE
 
