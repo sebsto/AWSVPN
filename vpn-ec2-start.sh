@@ -4,18 +4,20 @@
 
 # create and start an instance
 #AMI = AMZN Linux 64 Bits
-#As of 1 sept 2013, the 64 Bits AMZN Linux AMI are
+#As of 24 dec 2013, the 64 Bits AMZN Linux AMI are
 #"Mappings": {
-#       "AWSRegionToAMI": {
-#           "us-east-1": { "AMI": "ami-05355a6c" },
-#           "us-west-2": { "AMI": "ami-0358ce33" },
-#           "us-west-1": { "AMI": "ami-3ffed17a" },
-#           "eu-west-1": { "AMI": "ami-c7c0d6b3" },
-#           "ap-southeast-1": { "AMI": "ami-fade91a8" },
-#           "ap-northeast-1": { "AMI": "ami-39b23d38" },
-#           "ap-southeast-2": { "AMI": "ami-d16bfbeb" },
-#           "sa-east-1": { "AMI": "ami-5253894f" }
-#       }
+#        "AWSRegionToAMI": {
+#            "us-east-1": { "AMI": "ami-bba18dd2" },
+#            "us-west-2": { "AMI": "ami-ccf297fc" },
+#            "us-west-1": { "AMI": "ami-a43909e1" },
+#            "eu-west-1": { "AMI": "ami-5256b825" },
+#            "ap-southeast-1": { "AMI": "ami-b4baeee6" },
+#            "ap-northeast-1": { "AMI": "ami-0d13700c" },
+#            "ap-southeast-2": { "AMI": "ami-5ba83761" },
+#            "sa-east-1": { "AMI": "ami-c99130d4" },
+#            "us-gov-west-1": { "AMI": "ami-97fb9fb4" }
+#        }
+#    }
 
 AMI_ID=ami-5256b825 #must be adapted to your region (Amazon Linux, PV, 64 Bits, 2013.09.02, eu-west)
 KEY_ID=sst-aws
