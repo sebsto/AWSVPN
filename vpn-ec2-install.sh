@@ -6,7 +6,7 @@ VPN_USER=username
 VPN_PASSWORD=password
  
 # Those two variables will be found automatically
-PRIVATE_IP=`wget -q -O - 'http://instance-data/latest/meta-data/local-ipv4'`
+PRIVATE_IP=`wget -q -O - 'http://169.254.169.254/latest/meta-data/local-ipv4'`
  
 #the following does not work in VPC
 #PUBLIC_IP=`wget -q -O - 'http://instance-data/latest/meta-data/public-ipv4'`
