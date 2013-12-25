@@ -19,7 +19,9 @@
 #        }
 #    }
 
-AMI_ID=ami-5256b825 #must be adapted to your region (Amazon Linux, PV, 64 Bits, 2013.09.02, eu-west)
+#AMI_ID=ami-5256b825 #must be adapted to your region (Amazon Linux, PV, 64 Bits, 2013.09.02, eu-west)
+#We can get automatically the ami id
+AMI_ID=`wget -q -O - 'http://instance-data/latest/meta-data/ami-id'`
 KEY_ID=sst-aws
 SEC_ID=VPN
 BOOTSTRAP_SCRIPT=vpn-ec2-install.sh 
