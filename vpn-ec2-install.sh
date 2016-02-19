@@ -8,12 +8,7 @@ VPN_PASSWORD=password
 # Those two variables will be found automatically
 PRIVATE_IP=`wget -q -O - 'http://instance-data/latest/meta-data/local-ipv4'`
  
-#the following does not work in VPC
-#PUBLIC_IP=`wget -q -O - 'http://instance-data/latest/meta-data/public-ipv4'`
-#
-# use http://169.254.169.254/latest/meta-data/network/interfaces/macs/06:79:3f:b2:49:20/ipv4-associations/ instead but depends on mac address :-(
-#
-PUBLIC_IP=`wget -q -O - 'checkip.amazonaws.com'`
+PUBLIC_IP=`wget -q -O - http://instance-data/latest/meda-data/netowrk/interfaces/macs/$(wget -q -O - http://instance-data/latest/meta-data/mac)/ipv4-associations/`
  
 yum install -y --enablerepo=epel openswan xl2tpd
  
